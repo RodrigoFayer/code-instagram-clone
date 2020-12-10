@@ -1,7 +1,8 @@
 import logo from './logo.png';
 import './App.css';
-import Footer from "./Footer";
-import PostList from "./PostList";
+import Footer from "./footer";
+import PostList from "./postlist";
+import Header from "./header";
 
 const posts = [
     {
@@ -31,10 +32,14 @@ function App() {
     return (
         <div className="App">
 
-            <header className="App-header">
+            <Header />
+
+            {/* <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo"/>
                 <p>Code Instagram Clone</p>
-            </header>
+            </header> */}
+
+
 
             {hasPosts ?
                 <PostList posts={posts}/>

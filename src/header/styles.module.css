@@ -1,0 +1,26 @@
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 64px;
+    max-height: 64px;
+    box-sizing: border-box;
+    padding: 8px;
+    border-bottom: 1px solid rgba(219, 219, 219);
+
+    
+}
+
+.image {
+    position: absolute;
+    margin-right: 75vh;
+    text-align: start;
+}
+
+.input {
+    height: 70%;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: white;
+    border: 1px solid rgba(219, 219, 219);
+}
