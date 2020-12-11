@@ -77,7 +77,7 @@ function App() {
     return (
         <div className="App">
 
-            <Header />
+            <Header logout={setIsLogged}/>
 
             {!loading ?
                 <PostList posts={posts}/>
