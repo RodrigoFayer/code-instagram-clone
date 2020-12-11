@@ -8,7 +8,10 @@ const Header = () => {
             <div className={styles.image}>
                 <img src={instagram} />
             </div>
-            <input placeholder={<FaSearch />,'Pesquisar'} className={styles.input}></input>
+            <div className={styles.search}>
+                <FaSearch size="15" />
+                <input className={styles.input} type={'text'} placeholder={"Pesquisar"} />
+            </div>
         </header>    
     );
 }

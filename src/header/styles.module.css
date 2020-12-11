@@ -17,10 +17,23 @@
     text-align: start;
 }
 
-.input {
-    height: 70%;
-    box-sizing: border-box;
-    text-align: center;
-    background-color: white;
-    border: 1px solid rgba(219, 219, 219);
-}
+.search {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 13%;
+    border: 1px solid lightgrey;
+    background-color: rgb(250, 250, 250);
+    color: rgb(141, 138, 138);
+    height: 27px;
+    border-radius: 3px;
+  }
+  
+  .input {
+    outline: none;
+    border : none;
+    height: 15px;
+    width: 100px;
+    justify-content: center;
+    background-color: rgb(250, 250, 250);
+  }

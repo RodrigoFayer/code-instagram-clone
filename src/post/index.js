@@ -14,7 +14,8 @@ const Post = (props) => {
                 src={props.imageUrl}
                 className={styles.image}
             />
-            <p>{props.imageDescription}</p>
+            <p>{props.imageTitle}</p>
+            <small>{props.imageDescription}</small>
             <footer className={styles.footer}>
                 <Comment/>
             </footer>
