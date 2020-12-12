@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
 
 import './home.css';
 import Footer from "../footer";
 import PostList from "../postlist";
 import Header from "../header";
 
-import { API} from '../../api';
+import { API } from '../../api';
 
 function Home(props) {
 
@@ -30,8 +29,6 @@ function Home(props) {
         <div className="App">
 
             <Header logout={props.setIsLogged}/>
-
-            <Link to="/criar">Criar Post</Link>
 
             {!loading ?
                 <PostList posts={posts}/>

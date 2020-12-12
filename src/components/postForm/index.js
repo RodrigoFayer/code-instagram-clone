@@ -2,6 +2,9 @@ import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { API } from "../../api";
 
+import styles from './styles.module.css';
+import Post from '../post';
+
 
 const PostForm = () => {
     const history = useHistory();
@@ -12,8 +15,7 @@ const PostForm = () => {
 
     const [error,setError] = useState();
     const [loading,setLoading] = useState(false);
-
-
+    
     const handlePost = async () => {
         const body = {
             title,
@@ -35,30 +37,42 @@ const PostForm = () => {
 
     return (
         <div
-            style={{display: "flex", flexDirection:"column", padding: "20px"}}
+            className={styles.container}
         >
-            <h1>Post Form</h1>
+            <h1 className={styles.title}>Novo Post :</h1>
             <input
                 placeholder="Título"
                 value={title}
                 disabled={loading}
                 onChange={(event) => setTitle(event.target.value)}
+                className={styles.input}
             />
             <input
                 placeholder="Mensagem"
                 value={description}
                 disabled={loading}
                 onChange={(event) => setDescription(event.target.value)}
+                className={styles.input}
             />
             <input
                 placeholder="Url da Imagem"
                 value={imageUrl}
                 disabled={loading}
                 onChange={(event) => setImageUrl(event.target.value)}
+                className={styles.input}
             />
-            {imageUrl && imageUrl.length > 5 && <img style={{maxHeight: '100px'}} src={imageUrl}/>}
+            {imageUrl && imageUrl.length > 5 && 
+                <div>
+                    <h1>Preview:</h1>
+                    <Post 
+                        imageUrl={imageUrl}
+                        imageTitle={title}
+                        imageDescription={description}
+                    />
+                </div>
+            }
             {error && <p>{error}</p>}
-            <button style={{marginTop: '10px'}} onClick={handlePost} disabled={loading} >Postar</button>
+            <button className={styles.button} onClick={handlePost} disabled={loading} >Postar</button>
         </div>
     );
 }

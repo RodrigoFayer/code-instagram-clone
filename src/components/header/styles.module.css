@@ -40,11 +40,22 @@
 
 .logout{
   position: absolute;
-  margin-left: 75vh;
+  margin-left: 85vh;
   align-items: center;
 }
 
 .button {
   border: none;
   background-color: #FAFAFA;
+}
+
+.criar{
+  position: absolute;
+  margin-left: 75vh;
+  align-items: center;
+
+}
+
+.plus{
+  color: black;
 }
