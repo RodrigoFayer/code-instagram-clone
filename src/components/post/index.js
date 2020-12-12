@@ -8,11 +8,12 @@ const Post = (props) => {
         <article className={styles.post}>
             <Avatar 
                 userName={props.userName}
-                imageUrl={props.imageUrl}
+                userImageUrl={props.userImageUrl}
             />
            <img
                 src={props.imageUrl}
                 className={styles.image}
+                alt={"post-image-"+props.imageTitle}
             />
             <p>{props.imageTitle}</p>
             <small>{props.imageDescription}</small>

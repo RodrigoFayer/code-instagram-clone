@@ -1,4 +1,4 @@
-import instagram from "../instagram.png";
+import instagram from "../../instagram.png";
 import styles from "./styles.module.css";
 import { FaSearch,FaPowerOff } from "react-icons/fa";
 
