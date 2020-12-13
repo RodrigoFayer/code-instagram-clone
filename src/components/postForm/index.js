@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { API } from "../../api";
 
 import styles from './styles.module.css';
+import avatar from "../../avatar.png";
 import Post from '../post';
 
 
@@ -64,7 +65,9 @@ const PostForm = () => {
             {imageUrl && imageUrl.length > 5 && 
                 <div>
                     <h1>Preview:</h1>
-                    <Post 
+                    <Post
+                        userName={"Usuario"}
+                        userImageUrl={avatar}                        
                         imageUrl={imageUrl}
                         imageTitle={title}
                         imageDescription={description}
