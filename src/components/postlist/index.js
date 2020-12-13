@@ -9,11 +9,7 @@ const PostList = (props) =>{
                     props.posts.map((post) =>
                         <Post
                             key={post.id}
-                            userName={post.user.name}
-                            userImageUrl={post.user.avatar}
-                            imageUrl={post.imageUrl}
-                            imageTitle={post.title}
-                            imageDescription={post.description}
+                            post={post}
                         />
                         )
                 }
