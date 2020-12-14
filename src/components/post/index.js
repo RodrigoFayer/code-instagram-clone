@@ -48,12 +48,13 @@ const Post = (props) => {
                 })}
                 {commentQuantity < comments.length && (
                     <>
+                        <p className={styles.viewComment}>Ainda tem {comments.length - commentQuantity} comentários não vistos</p>
                         <button
                             onClick={() => setCommentQuantity(commentQuantity+2)}
+                            className={styles.buttonComment}
                         >
                             Mostrar mais
                         </button>
-                        <p>Ainda tem {comments.length - commentQuantity} comentários não vistos</p>
                     </>
                 )}
                 

@@ -19,15 +19,28 @@
     font-size: 15px;
 }
 
-.commentList{
-
-}
-
 .comment{
-    color: #565656;
     margin-left: 10px;
     font-size: 12px;
 }
+
+.viewComment{
+    display: inline;
+    margin-left: 10px;
+    font-size: 15px;
+}
+
+.buttonComment{
+    border: none;
+    margin-left: 4px;
+    background-color: white;
+    color: #808080;
+}
+
+.buttonComment:hover{
+    cursor: pointer;
+}
+
 
 
 .footer{
