@@ -3,8 +3,9 @@ import { useHistory } from 'react-router-dom';
 import { API } from "../../api";
 
 import styles from './styles.module.css';
-import avatar from "../../avatar.png";
-import Post from '../post';
+import userImage from "../../avatar.png";
+import Avatar from '../avatar';
+
 
 
 const PostForm = () => {
@@ -37,45 +38,57 @@ const PostForm = () => {
     };
 
     return (
-        <div
-            className={styles.container}
-        >
-            <h1 className={styles.title}>Novo Post :</h1>
-            <input
-                placeholder="Título"
-                value={title}
-                disabled={loading}
-                onChange={(event) => setTitle(event.target.value)}
-                className={styles.input}
-            />
-            <input
-                placeholder="Mensagem"
-                value={description}
-                disabled={loading}
-                onChange={(event) => setDescription(event.target.value)}
-                className={styles.input}
-            />
-            <input
-                placeholder="Url da Imagem"
-                value={imageUrl}
-                disabled={loading}
-                onChange={(event) => setImageUrl(event.target.value)}
-                className={styles.input}
-            />
-            {imageUrl && imageUrl.length > 5 && 
-                <div>
-                    <h1>Preview:</h1>
-                    <Post
-                        userName={"Usuario"}
-                        userImageUrl={avatar}                        
-                        imageUrl={imageUrl}
-                        imageTitle={title}
-                        imageDescription={description}
-                    />
+        <div>
+            <div
+                className={styles.container}
+            >
+                <h1 className={styles.title}>Novo Post :</h1>
+                <input
+                    placeholder="Título"
+                    value={title}
+                    disabled={loading}
+                    onChange={(event) => setTitle(event.target.value)}
+                    className={styles.input}
+                />
+                <input
+                    placeholder="Mensagem"
+                    value={description}
+                    disabled={loading}
+                    onChange={(event) => setDescription(event.target.value)}
+                    className={styles.input}
+                />
+                <input
+                    placeholder="Url da Imagem"
+                    value={imageUrl}
+                    disabled={loading}
+                    onChange={(event) => setImageUrl(event.target.value)}
+                    className={styles.input}
+                />
+            </div>
+            <main className={styles.wrapper}>
+                {imageUrl && imageUrl.length > 5 &&
+                    <div className={styles.list}>
+                        <h1>Preview:</h1>
+                        <article className={styles.post}>
+                            <Avatar 
+                                userName={"Usuario"}
+                                userImageUrl={userImage}
+                            />
+                            <img
+                                src={imageUrl}
+                                className={styles.image}
+                                alt={"post-image-"+title}
+                            />
+                            <p>{title}</p>
+                            <small>{description}</small>
+                        </article>
+                    </div>
+                }
+                {error && <p>{error}</p>}
+                <div className={styles.sub}>
+                    <button className={styles.button} onClick={handlePost} disabled={loading} >Postar</button>
                 </div>
-            }
-            {error && <p>{error}</p>}
-            <button className={styles.button} onClick={handlePost} disabled={loading} >Postar</button>
+            </main>
         </div>
     );
 }

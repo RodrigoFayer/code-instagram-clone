@@ -1,5 +1,8 @@
 import  React from "react";
 import { API } from "../../api";
+import { FaRegHeart } from "react-icons/fa";
+import styles from './styles.module.css';
+
 
 class LikeButton extends React.Component {
     constructor(props){
@@ -25,7 +28,10 @@ class LikeButton extends React.Component {
 
     render() {
         return(
-            <button onClick={() => this.addLike()}>{this.state.likeCount} likes</button>
+            <div className={styles.session}>
+                <button className={styles.like} onClick={() => this.addLike()}> <FaRegHeart size="25"/></button>
+                <p className={styles.likeCount}>{this.state.likeCount} Curtidas</p>
+            </div>
         )
     }
 }

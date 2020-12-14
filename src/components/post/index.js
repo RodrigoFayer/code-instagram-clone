@@ -4,9 +4,10 @@ import LikeButton from "../likeButton";
 import styles from './styles.module.css';
 import Avatar from "./../avatar";
 
+
 const Post = (props) => {
     const [comments,SetComments] = useState(props.post.comments);
-    const [commentQuantity,setCommentQuantity] = useState(3);
+    const [commentQuantity,setCommentQuantity] = useState(2);
 
     const addNewComment = (comment) => {
         const commentList = [...comments];
@@ -25,23 +26,21 @@ const Post = (props) => {
                 className={styles.image}
                 alt={"post-image-"+props.post.title}
             />
-            <div style={{display: 'flex', justifyContent: 'space-around'}}>
-                <p>{props.post.title}</p>
+            <div >
                 <LikeButton postId={props.post.id} likeCount={props.post.like}/>
             </div>
-            <small>{props.post.description}</small>
-            <div style={{padding: '10px'}}>
+            <div >
+                <p className={styles.title}><b>{props.post.user.name}</b>: {props.post.title}</p>
+            </div>
+            <div className={styles.description}>
+                <p>{props.post.description}</p>
+            </div>
+            <div className={styles.commentList}>
                 {comments.slice(0,commentQuantity).map(comment =>{
                     return (
                     <p
                         key={comment.id}
-                        style={{
-                            color: '#565656',
-                            fontSize: '10px',
-                            borderTopColor: "black",
-                            borderTopWidth: "1px",
-                            borderTopStyle: "solid"
-                        }}
+                        className={styles.comment}
                     >
                         {comment.text}
                     </p>
@@ -50,7 +49,7 @@ const Post = (props) => {
                 {commentQuantity < comments.length && (
                     <>
                         <button
-                            onClick={() => setCommentQuantity(commentQuantity+3)}
+                            onClick={() => setCommentQuantity(commentQuantity+2)}
                         >
                             Mostrar mais
                         </button>
