@@ -10,10 +10,6 @@ const Header = (props) => {
             <div className={styles.image}>
                 <img src={instagram} />
             </div>
-            <div className={styles.search}>
-                <FaSearch size="15" />
-                <input className={styles.input} type={'text'} placeholder={"Pesquisar"} />
-            </div>
             <div className={styles.logout}>
                 <button onClick={() => {
                         localStorage.clear();
